@@ -1,0 +1,43 @@
+{
+  "update": [
+    {
+      "id": 1,
+      "name": "Studio",
+      "description": "Atualizou parte programação",
+      "version": "21.4"
+    },
+    {
+      "id": 2,
+      "name": "Administrativo",
+      "description": "Atualizou os relatórios",
+      "version": "21.4"
+    },
+    {
+      "id": 3,
+      "name": "Recepção",
+      "description": "Atualizou sorteio",
+      "version": "21.4"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "user": "Ilton",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "user": "Suporte",
+      "password": "admin"
+    }
+  ],
+  "uploads": [
+    {
+      "programs": "3",
+      "version": "dawd",
+      "logArea": "da",
+      "file": "C:\\fakepath\\Core.dll",
+      "id": 1
+    }
+  ]
+}

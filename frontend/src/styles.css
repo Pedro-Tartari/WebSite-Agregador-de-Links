@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+html,
+body {
+   min-height: 100vh;
+   height: auto;
+   margin: 0;
+   background-color: #007CC2;
+}

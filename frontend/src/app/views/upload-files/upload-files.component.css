@@ -1,0 +1,41 @@
+.account-pages {
+    height: 90vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    height: 100%;
+}
+
+.container .header{
+    text-align: center;
+    margin: 2rem;
+}
+
+.container label{
+    font-size: 1.3rem;
+}
+
+.container input,textarea,select{
+    border: 1px solid;
+}
+
+.file-container{
+    width: 100%;
+    border: 3px dotted black;
+}
+
+.file{
+    opacity: 0;
+    padding: 5rem;
+    width: auto;
+    height: 5rem;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,56 @@
+<div class="account-pages ">
+    <div class="container bg-white  d-flex justify-content-center flex-wrap">
+        <div class="row g-0  align-items-center">
+            <div class="col-lg-6">
+                <div class="bg-login">
+                    <div class="bg-overlay"></div>
+                    <img src="assets/img/Wincart-Cheia.PNG" class="img-fluid" alt="">
+                </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-lg-6">
+                <div class="auth-box">
+                    <div class="auth-content">
+                        <div class="mb-3 pb-3 text-center">
+                            <h4 class="fw-normal">Bem Vindo a <span class="fw-bold">Winkochan</span></h4>
+                        </div>
+
+                        <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-custom mt-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Usuário</label>
+                                <input formControlName="email" type="text" class="form-control" id="email"
+                                    placeholder="Inform o usuário">
+                            </div>
+
+                            <div class="form-password mb-3 auth-pass-inputgroup">
+                                <label class="form-label" for="userpassword">Senha</label>
+                                <div class="position-relative">
+                                    <input formControlName="password" type="password" class="form-control"
+                                        id="password-input" placeholder="Informe a senha">
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                            </div><!-- end row -->
+
+                            <div class="text-center mt-3">
+                                <button class="btn btn-success shadow-none w-50 rounded-pill" type="submit">
+                                    Log In</button>
+                            </div>
+
+
+                        </form>
+                        <!-- end -->
+
+                    </div><!-- auth content -->
+                </div>
+                <!-- end authbox -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wk-link": {
+      "hosting": {
+        "frontend": [
+          "wk-link"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wk-link"
+  }
+}

@@ -1,0 +1,17 @@
+.logo {
+    max-height: 40px;
+}
+
+.headerLinks{
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.headerLinks i{
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.navv{
+    background-color: rgba(0, 0, 0, 0.2)
+}
