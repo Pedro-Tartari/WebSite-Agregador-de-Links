@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   private prodCollection!: AngularFirestoreCollection<Product>;  
   array!: Product[];
  
-  teste: Product = this.array[this.array.length-1]
 
 
   constructor(private aff: AngularFirestore, public crud: CrudService) {
@@ -28,7 +27,6 @@ export class HomeComponent implements OnInit {
     for (let index = 0; index < arrayProd.length; index++) {
       this.getInfoToArray(arrayProd[index]);  
     }
-    console.log(this.teste)
   }
 
   getInfoToArray(produto: string){
