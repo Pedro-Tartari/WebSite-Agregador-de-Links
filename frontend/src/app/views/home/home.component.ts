@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HomeService } from './home.service';
-// import { UploadInterface } from './upload.module';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { map, Observable, of, take } from 'rxjs';
+import { Product } from 'src/app/model/Produto.models';
+import { CrudService } from 'src/app/services/crud/crud.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,26 +11,41 @@ import { HomeService } from './home.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // uploads!: UploadInterface[];
+
+  currentPage$: any
+
+  private prodCollection!: AngularFirestoreCollection<Product>;  
+  array!: Product[];
+ 
+  teste: Product = this.array[this.array.length-1]
 
 
-  constructor(
-    private http: HttpClient, 
-    private homeService: HomeService,
-     ) { }
-
-  ngOnInit(): void {
-  
-
-    // this.homeService.read().subscribe(uploads => {
-    //   this.uploads = uploads
-    //   console.log(uploads)
-    // } )
-
+  constructor(private aff: AngularFirestore, public crud: CrudService) {
   }
 
-  // getData(): Observable<UploadInterface[]>{
-  //   return this.http.get<UploadInterface[]>('http://localhost:3001/uploads');
-  // }
+  ngOnInit(): void {
+    let arrayProd: string[] = ['Studio', 'Adm'];
+    for (let index = 0; index < arrayProd.length; index++) {
+      this.getInfoToArray(arrayProd[index]);  
+    }
+    console.log(this.teste)
+  }
+
+  getInfoToArray(produto: string){
+    this.prodCollection = this.aff.collection<Product>(produto);
+    this.prodCollection.snapshotChanges()
+      .pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as Product;
+          return { ...data };
+        }))
+      )
+      .subscribe((data) =>{
+        this.array = data; 
+        console.log(data)
+      } )
+  }
+
+
 
 }
