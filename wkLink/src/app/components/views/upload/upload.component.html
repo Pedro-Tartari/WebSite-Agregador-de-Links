@@ -1,0 +1,84 @@
+<div class="account-pages ">
+    <div class="container bg-white ">
+
+        <div class="header">
+            <h3>Atualização de Dados</h3>
+        </div>
+        <form [formGroup]="formProduct" (submit)="onSubimit()">
+            <div class="row g-0 align-items-center">
+                <!-- Col 1 -->
+                <div class="col">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label for="programs">Selecione o Programa</label>
+                            <select formControlName="name" class="form-control" id="programs">
+                                <option value="Studio" >Studio</option>
+                                <option value="Administrativo" >Administrativo</option>
+                                <option value="Recepção" >Recepção</option>
+                                <option value="Cartucheira" >Cartucheira</option>
+                                <option value="Censura" >Censura</option>
+                                <option value="Streaming" >Streaming</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="version">Versão</label>
+                        <input formControlName="version" type="text" class="form-control" id="version"
+                            placeholder="Informe a Versão">
+                    </div>
+                    <div class="form-group">
+                        <label for="logArea">Logs de Atualização</label>
+                        <textarea formControlName="txtArea" class="form-control" id="logArea" rows="5"></textarea>
+                    </div>
+                </div>
+                <!-- Fim Col-1 -->
+
+                <!-- Col 2  -->
+                <div class="col">
+                    <div class="form-group ">
+                        <label for="uploadFild">Upload</label>
+                        <p class="text-muted mb-0">Clique ou Arraste um arquivo</p>
+                        <div class="file-container">
+                            <input (change)="uploadFiles($event)" formControlName="file" type="file"  class="file" id="uploadFild">
+                        </div>
+
+                        <div *ngIf="file">
+                            File name: {{ file.name}} <br>
+                            <button (click)="file = undefined">Limpar Arquivo</button>
+                        </div>
+
+                    </div>
+                </div>
+                 <!-- Fim Col-2 -->
+            </div>
+            <!-- Fim da ROW -->
+
+            <div class="row">
+                <div class="col">
+                    <!-- (click)="uploadFile()" -->
+                    <button class="btn btn-success shadow-none rounded-pill" type="submit"  >Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="file-container" *ngIf="!file">
+            <input type="file" (change)="getFile($event)" class="file">
+        </div>
+
+        <div *ngIf="file">
+            File name: {{ file.name}} <br>
+            <button (click)="file = undefined">clear file</button>
+        </div>
+
+        <button (click)="uploadFile()">Upload</button> -->

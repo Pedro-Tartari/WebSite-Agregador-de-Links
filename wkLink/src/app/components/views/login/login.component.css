@@ -1,0 +1,70 @@
+.account-pages {
+    height: 90vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container {
+    height: 100%;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+.btn,
+.btn:focus,
+button,
+button:focus {
+    outline: none !important;
+}
+
+p {
+    font-size: 16px;
+}
+
+.btn-success {
+    background: #1fafa5;
+    border-color: #1fafa5 !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success.focus,
+.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success .open>.dropdown-toggle.btn-primary {
+    background: #1c9e95;
+    border-color: #1c9e95;
+}
+
+.form-custom .form-label{
+    font-size: 1.2rem;
+}
+
+.form-custom .form-control {
+    border-radius: 30px;
+    border: 2px solid #1fafa5;
+    padding: 10px 15px;
+}
+
+.form-custom .form-control::placeholder {
+    font-size: 15px !important;
+}
+
+.form-custom .form-control:focus {
+    border-color: #16867f;
+    box-shadow: none;
+}
