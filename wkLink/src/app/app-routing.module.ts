@@ -3,11 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/views/home/home.component';
 import { LoginComponent } from './components/views/login/login.component';
 import { UploadComponent } from './components/views/upload/upload.component';
+import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from "@angular/fire/auth-guard";
 
+
+
+const redirectToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToHome = () => redirectLoggedInTo(['upload']);
 
 const routes: Routes = [{
   path: "login", 
-  component: LoginComponent
+  component: LoginComponent,
+  ...canActivate(redirectToHome)
 },
 {
   path: "", 
@@ -16,7 +22,8 @@ const routes: Routes = [{
 },
 {
   path: "upload", 
-  component: UploadComponent
+  component: UploadComponent,
+  ...canActivate(redirectToLogin)
 }];
 
 @NgModule({

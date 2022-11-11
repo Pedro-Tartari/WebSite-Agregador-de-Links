@@ -43,7 +43,7 @@
     width: 100%;
     color: #fff;
     text-align: center;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .7);
     transition: all .5s ease;
     -moz-transition: all .5s ease;
 }
@@ -54,6 +54,9 @@
 
 .text-wrap h3 {
     padding: 0 5px;
+}
+.text-wrap p {
+    font-size: 1.3rem;
 }
 
 .box-img {
@@ -66,21 +69,9 @@
     border: 1px solid #ccc;
 }
 
-.text-wrap .title-hover {
-    width: 50%;
-    float: left;
-    padding: 0 5px;
-}
 
-.text-wrap-hover p {
-    padding: 15px;
-    font-family: "roboto";
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 2px 2px 3px #000;
-    color: white;
-}
+
+
 
 .new-deal .item-slide:hover .text-wrap {
     background: none
@@ -97,8 +88,11 @@
 .link-decoration {
     padding: 0.3rem;
 }
+.link-decoration:first-child{
+    margin-top: 15px;
+}
 
-.link-decoration a {
+.link-decoration button, a {
     background: #007CC2;
     color: #fff;
     padding: 8px;
@@ -107,7 +101,7 @@
     float: left;
     min-width: 101px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
 
 }

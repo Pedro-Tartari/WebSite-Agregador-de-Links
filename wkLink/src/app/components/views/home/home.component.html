@@ -1,27 +1,32 @@
 <section class="new-deal">
     <div class="container bg-white ">
-        <div class="row" >
+        <div class="row  d-flex justify-content-center flex-wrap" >
             <!-- Card 1 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="studio_img" />
+                        <img src="assets/img/Winkochan Studio.PNG" alt="studio_img" />
                         <div class="text-wrap">
-
                             <h3> Studio</h3>
+                            <p>Ultima versão: <b> {{lastStudioV}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastStudio}}</p>
-                            </div>
                             <div class="row text-center ">
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
-                                        <a >Instalação</a>
+                                        <!-- Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studioModal">
+                                            Logs
+                                          </button>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                        <a href="#">Instalação</a>
                                     </div>
                                 </div>
                                 <div
@@ -38,22 +43,27 @@
             </div>
             <!-- Fim Card 1 -->
 
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="adm_img" />
+                        <img src="assets/img/Adm.PNG" alt="studio_img" />
                         <div class="text-wrap">
                             <h3> Administrativo</h3>
+                            <p>Ultima versão: <b> {{lastAdm}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastAdm}}</p>
-                            </div>
                             <div class="row text-center ">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                        <!-- Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#admModal">
+                                            Logs
+                                          </button>
+                                    </div>
+                                </div>
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
@@ -72,23 +82,29 @@
                     </div>
                 </div>
             </div>
-            <!-- Fim Card 2 -->
-            <!-- Card 3 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <!-- Fim Card 1 -->
+
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="rcp_img" />
+                        <img src="assets/img/Rcp.PNG" alt="studio_img" />
                         <div class="text-wrap">
                             <h3> Recepção</h3>
+                            <p>Ultima versão: <b> {{lastRcp}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastRcp}}</p>
-                            </div>
                             <div class="row text-center ">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                        <!-- Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rcpModal">
+                                            Logs
+                                          </button>
+                                    </div>
+                                </div>
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
@@ -107,24 +123,29 @@
                     </div>
                 </div>
             </div>
-            <!-- Fim Card 3 -->
+            <!-- Fim Card 1 -->
 
-            <!-- Card 4 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="cartucheira_img" />
+                        <img src="assets/img/Wincart-Cheia.PNG" alt="studio_img" />
                         <div class="text-wrap">
                             <h3> Cartucheira</h3>
+                            <p>Ultima versão: <b> {{lastCart}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastCart}}</p>
-                            </div>
                             <div class="row text-center ">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                        <!-- Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
+                                            Logs
+                                          </button>
+                                    </div>
+                                </div>
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
@@ -143,23 +164,29 @@
                     </div>
                 </div>
             </div>
-            <!-- Fim Card 4 -->
-            <!-- Card 5 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <!-- Fim Card 1 -->
+
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="censura_img" />
+                        <img src="assets/img/Censura.PNG" height="245px" width="500px" alt="studio_img" />
                         <div class="text-wrap">
                             <h3> Censura</h3>
+                            <p>Ultima versão: <b> {{lastCensura}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastCensura}}</p>
-                            </div>
                             <div class="row text-center ">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                       <!-- Modal -->
+                                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#censuraModal">
+                                        Logs
+                                      </button>
+                                    </div>
+                                </div>
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
@@ -178,23 +205,29 @@
                     </div>
                 </div>
             </div>
-            <!-- Fim Card 5 -->
-            <!-- Card 6 -->
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+            <!-- Fim Card 1 -->
+
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 ">
                 <div class="item-slide">
                     <div class="box-img">
-                        <img src="http://orig11.deviantart.net/6356/f/2010/156/e/f/swallowed_by_nature_by_danutza88.jpg"
-                            alt="stream_img" />
+                        <img  src="assets/img/Streaming.PNG" height="245px" width="500px" alt="studio_img" />
                         <div class="text-wrap">
                             <h3> Streaming</h3>
+                            <p>Ultima versão: <b> {{lastStream}}</b></p>
                         </div>
                     </div>
                     <div class="slide-hover">
                         <div class="text-wrap-hover">
-                            <div class="title-hover">
-                                <p>Ultima versão: {{lastStream}}</p>
-                            </div>
                             <div class="row text-center ">
+                                <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                                    <div class="link-decoration ">
+                                        <!-- Modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#streamModal">
+                                            Logs
+                                          </button>
+                                    </div>
+                                </div>
                                 <div
                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
                                     <div class="link-decoration ">
@@ -213,8 +246,131 @@
                     </div>
                 </div>
             </div>
-            <!-- Fim Card 6 -->
-           
+            <!-- Fim Card 1 -->
+
+
         </div>
     </div>
 </section>
+
+
+
+<!-- Studio -->
+<div class="modal fade" id="studioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastStudioL}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADM -->
+  <div class="modal fade" id="admModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastAdmL}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- RCP -->
+  <div class="modal fade" id="rcpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastRcpL}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART -->
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastCartL }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Censura -->
+  <div class="modal fade" id="censuraModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastCensuraL}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="streamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Última Modificação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>{{ lastStreamL}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

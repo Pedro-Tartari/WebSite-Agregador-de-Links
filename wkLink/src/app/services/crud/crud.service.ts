@@ -9,6 +9,7 @@ export class CrudService {
 
   public productList: any;
   lastId: string[] = [];
+  number = 1;
  
 
   constructor(private afd: AngularFirestore) {
@@ -19,7 +20,15 @@ export class CrudService {
     product.id = this.afd.createId();
     this.lastId.push(product.id);
     console.log(this.lastId)
-    return this.afd.collection(prod).doc().set(product)
+    return this.afd.collection(prod).doc(this.randomNumber()).set(product)
+  }
+
+  randomNumber(){
+    for (let i = 0; i < this.number; i++) {
+      this.number++;  
+      return String(this.number);
+    }
+    return;
   }
 
   update(product: Product) {

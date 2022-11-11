@@ -39,12 +39,7 @@
                         <label for="uploadFild">Upload</label>
                         <p class="text-muted mb-0">Clique ou Arraste um arquivo</p>
                         <div class="file-container">
-                            <input (change)="uploadFiles($event)" formControlName="file" type="file"  class="file" id="uploadFild">
-                        </div>
-
-                        <div *ngIf="file">
-                            File name: {{ file.name}} <br>
-                            <button (click)="file = undefined">Limpar Arquivo</button>
+                            <input (change)="uploadFile($event)" formControlName="file" type="file"  class="file" id="uploadFild">
                         </div>
 
                     </div>
@@ -55,7 +50,7 @@
 
             <div class="row">
                 <div class="col">
-                    <!-- (click)="uploadFile()" -->
+                    
                     <button class="btn btn-success shadow-none rounded-pill" type="submit"  >Enviar</button>
                 </div>
             </div>
