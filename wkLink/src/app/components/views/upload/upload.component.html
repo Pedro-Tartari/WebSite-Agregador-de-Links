@@ -37,9 +37,14 @@
                 <div class="col">
                     <div class="form-group ">
                         <label for="uploadFild">Upload</label>
-                        <p class="text-muted mb-0">Clique ou Arraste um arquivo</p>
-                        <div class="file-container">
+                        <!-- <p class="text-muted mb-0">Clique ou Arraste um arquivo</p> -->
+                        <div class="file-container" *ngIf="!file">
                             <input (change)="uploadFile($event)" formControlName="file" type="file"  class="file" id="uploadFild">
+                        </div>
+
+                        <div *ngIf="file">
+                            File name: {{ file.name }}
+                            <button (click)="file = undefined">Carregue</button>
                         </div>
 
                     </div>

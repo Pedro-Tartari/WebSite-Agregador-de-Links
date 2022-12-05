@@ -8,6 +8,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { UploadFileService } from 'src/app/services/uploadFile/upload-file.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { concatMap } from 'rxjs';
+import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 
 @Component({
   selector: 'app-upload',
@@ -19,9 +20,9 @@ export class UploadComponent implements OnInit {
   formProduct: FormGroup;
 
   file: any;
+
+  
  
-
-
   constructor(private authService: AuthService, private crud: CrudService,
     private formBuilder: FormBuilder,private toast: HotToastService ,private uploadFileService: UploadFileService , private https: HttpClient,private storage: AngularFireStorage) {
     this.formProduct = formBuilder.group({
@@ -35,25 +36,34 @@ export class UploadComponent implements OnInit {
   }
 
   uploadFile(event: any){
-    this.uploadFileService.uploadFile(event.target.files[0], `novo/${this.selectTableDb()}`).pipe(
-        this.toast.observe({
-          loading: 'Esta sendo enviado ',
-          success: 'Enviado',
-          error: 'Houve um problema'
-        })
-    ).subscribe();
+    this.file = event.target.files[0];
+    console.log(this.file.name);
+    
+
+
+    // this.uploadFileService.uploadFile(event.target.files[0], `novo/${this.selectTableDb()}`).pipe(
+    //     this.toast.observe({
+    //       loading: 'Esta sendo enviado ',
+    //       success: 'Enviado',
+    //       error: 'Houve um problema'
+    //     })
+    // ).subscribe();
   }
 
   onSubimit() {
 
-    if (this.formProduct.valid) {
+    if (this.formProduct.valid && this.file) {
       this.crud.creat(this.formProduct.value, this.selectTableDb()).then((res) => {
+        this.uploadFileService.uploadFile(this.file,  this.file.name);
         this.formProduct.reset();
-        alert('Sucesso')
+        this.file = undefined;
       })
         .catch((error) => {
           console.log(error)
         })
+    }
+    else{
+      this.toast.error("Campos em Branco")
     }
   }
 
@@ -82,5 +92,9 @@ export class UploadComponent implements OnInit {
       }
     }
   }
+
+  
+
+
 
 }

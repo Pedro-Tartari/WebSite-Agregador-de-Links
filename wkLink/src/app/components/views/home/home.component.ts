@@ -3,6 +3,10 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { map } from 'rxjs';
 import { Product } from 'src/app/model/Produto.models';
 import { CrudService } from 'src/app/services/crud/crud.service';
+import { HttpClient } from '@angular/common/http';
+
+
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 @Component({
   selector: 'app-home',
@@ -20,6 +24,7 @@ export class HomeComponent implements OnInit {
   arrayCensura!: Product[];
   arrayStream!: Product[];
 
+
   lastStudioV: any;
   lastStudioL: any
   lastAdm: any;
@@ -35,26 +40,39 @@ export class HomeComponent implements OnInit {
 
   profileUrl!: string;
 
+  instaladorUrlStudio: any;
+  instaladorUrlAdm: any;
 
-  constructor(private aff: AngularFirestore, public crud: CrudService, private storage: AngularFirestore) {
+  atualizadorUrlAdm: any;
+  atualizadorUrlStudio: any;
+  atualizadorUrlCensura: any;
+  atualizadorUrlStream: any;
+  atualizadorUrlCartucho: any;
+  atualizadorUrlRcp: any;
+
+  constructor(private aff: AngularFirestore, public crud: CrudService, private storage: AngularFirestore, private http: HttpClient) {
   }
 
   ngOnInit(): void {
-
-    // this.update.init();
-    // this.update.returnData();
     let arrayProd: string[] = ['Studio', 'Adm', 'Rcp', 'Cart', 'Censura', 'Stream'];
     for (let index = 0; index < arrayProd.length; index++) {
       this.getInfoFromDB(arrayProd[index]);
-
-
-
       this.aff.collection(arrayProd[index]).valueChanges()
         .subscribe(val => {
 
           console.log(val);
         });
     }
+
+
+    this.getInstaladorStudio();
+    this.getInstaladorAdm();
+    this.getUpdateAdm();
+    this.getUpdateCartucho();
+    this.getUpdateCensura();
+    this.getUpdateRcp();
+    this.getUpdateStream();
+    this.getUpdateStudio();
 
   }
 
@@ -111,4 +129,159 @@ export class HomeComponent implements OnInit {
     }
   }
 
+
+  
+  getInstaladorStudio(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'instaladores/INSTALAR-85.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+      
+         this.instaladorUrlStudio = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getInstaladorAdm(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'instaladores/INSTALAR-ADM.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+        console.log(url + " att")
+         this.instaladorUrlAdm = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateAdm(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/UPDATE-ADM.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlAdm = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateStudio(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/UPDATE_STUDIO.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlStudio = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateCensura(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/INSTALAR_WINREC40.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlCensura = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateStream(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/INSTALAR_SIKCAST-HD.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlStream = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateCartucho(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/INSTALAR-WINCART60.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlCartucho = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
+
+  getUpdateRcp(){
+    const storages = getStorage();
+    const pathReference = ref(storages, 'atualizadores/INSTALAR-RCP.exe');
+    getDownloadURL(pathReference)
+      .then((url) => {
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = (event) => {
+          const blob = xhr.response;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+         this.atualizadorUrlRcp = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
 }
