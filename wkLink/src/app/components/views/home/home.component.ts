@@ -130,8 +130,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-  
-  getInstaladorStudio(){
+
+  getInstaladorStudio() {
     const storages = getStorage();
     const pathReference = ref(storages, 'instaladores/INSTALAR-85.exe');
     getDownloadURL(pathReference)
@@ -143,15 +143,15 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-      
-         this.instaladorUrlStudio = url;
+
+        this.instaladorUrlStudio = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getInstaladorAdm(){
+  getInstaladorAdm() {
     const storages = getStorage();
     const pathReference = ref(storages, 'instaladores/INSTALAR-ADM.exe');
     getDownloadURL(pathReference)
@@ -164,14 +164,14 @@ export class HomeComponent implements OnInit {
         xhr.open('GET', url);
         xhr.send();
         console.log(url + " att")
-         this.instaladorUrlAdm = url;
+        this.instaladorUrlAdm = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateAdm(){
+  getUpdateAdm() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/UPDATE-ADM.exe');
     getDownloadURL(pathReference)
@@ -183,14 +183,14 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlAdm = url;
+        this.atualizadorUrlAdm = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateStudio(){
+  getUpdateStudio() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/UPDATE_STUDIO.exe');
     getDownloadURL(pathReference)
@@ -202,14 +202,14 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlStudio = url;
+        this.atualizadorUrlStudio = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateCensura(){
+  getUpdateCensura() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/INSTALAR_WINREC40.exe');
     getDownloadURL(pathReference)
@@ -221,14 +221,14 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlCensura = url;
+        this.atualizadorUrlCensura = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateStream(){
+  getUpdateStream() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/INSTALAR_SIKCAST-HD.exe');
     getDownloadURL(pathReference)
@@ -240,14 +240,14 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlStream = url;
+        this.atualizadorUrlStream = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateCartucho(){
+  getUpdateCartucho() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/INSTALAR-WINCART60.exe');
     getDownloadURL(pathReference)
@@ -259,14 +259,14 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlCartucho = url;
+        this.atualizadorUrlCartucho = url;
       })
       .catch((error) => {
         // Handle any errors
       });
   }
 
-  getUpdateRcp(){
+  getUpdateRcp() {
     const storages = getStorage();
     const pathReference = ref(storages, 'atualizadores/INSTALAR-RCP.exe');
     getDownloadURL(pathReference)
@@ -278,7 +278,7 @@ export class HomeComponent implements OnInit {
         };
         xhr.open('GET', url);
         xhr.send();
-         this.atualizadorUrlRcp = url;
+        this.atualizadorUrlRcp = url;
       })
       .catch((error) => {
         // Handle any errors

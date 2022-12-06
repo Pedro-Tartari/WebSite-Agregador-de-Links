@@ -10,6 +10,11 @@ import { HotToastService } from '@ngneat/hot-toast';
 import { concatMap } from 'rxjs';
 import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 
+import { initializeApp } from "firebase/app";
+import { doc, getDoc, getFirestore, onSnapshot } from "firebase/firestore";
+import { Id } from 'src/app/model/Id.models';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -21,24 +26,68 @@ export class UploadComponent implements OnInit {
 
   file: any;
 
-  
- 
-  constructor(private authService: AuthService, private crud: CrudService,
-    private formBuilder: FormBuilder,private toast: HotToastService ,private uploadFileService: UploadFileService , private https: HttpClient,private storage: AngularFireStorage) {
+
+  arrayId!: Id[];
+private idCollection!: AngularFirestoreCollection<Id>;
+
+  constructor(private authService: AuthService, 
+    private crud: CrudService,
+    private formBuilder: FormBuilder, 
+    private toast: HotToastService, 
+    private uploadFileService: UploadFileService, 
+    private https: HttpClient, 
+    private storage: AngularFireStorage,
+    private aff: AngularFirestore,
+    ) {
     this.formProduct = formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
       version: ['', Validators.compose([Validators.required])],
       txtArea: ['', Validators.compose([Validators.required])]
+
     })
   }
 
   ngOnInit(): void {
+   
   }
 
-  uploadFile(event: any){
+   teste() {
+
+    this.idCollection = this.aff.collection<Id>('ID');
+    this.idCollection.valueChanges().subscribe(data => {
+      this.arrayId = data;
+      console.log(this.arrayId[0].id + 1)
+    })
+
+     
+    // const db = getFirestore();
+    // const docRef = doc(db, "ID","DocumentID");
+    // getDoc(docRef).then((doc) => {
+    //   console.log(doc.data(), doc.id)
+    // })
+
+    
+
+    // onSnapshot(docRef, (doc) =>{
+    //   console.log(doc.data, doc.id)
+    // })
+
+    // const docSnap = await getDoc(docRef);
+
+
+    // if (docSnap.exists()) {
+    //   // this.arrayId = docSnap.data();
+    //   console.log("Document data:", docSnap.data());
+    // } else {
+    //   // doc.data() will be undefined in this case
+    //   console.log("No such document!");
+    // }
+  }
+
+  uploadFile(event: any) {
     this.file = event.target.files[0];
     console.log(this.file.name);
-    
+
 
 
     // this.uploadFileService.uploadFile(event.target.files[0], `novo/${this.selectTableDb()}`).pipe(
@@ -54,7 +103,7 @@ export class UploadComponent implements OnInit {
 
     if (this.formProduct.valid && this.file) {
       this.crud.creat(this.formProduct.value, this.selectTableDb()).then((res) => {
-        this.uploadFileService.uploadFile(this.file,  this.file.name);
+        this.uploadFileService.uploadFile(this.file, this.file.name);
         this.formProduct.reset();
         this.file = undefined;
       })
@@ -62,7 +111,7 @@ export class UploadComponent implements OnInit {
           console.log(error)
         })
     }
-    else{
+    else {
       this.toast.error("Campos em Branco")
     }
   }
@@ -93,7 +142,7 @@ export class UploadComponent implements OnInit {
     }
   }
 
-  
+
 
 
 
