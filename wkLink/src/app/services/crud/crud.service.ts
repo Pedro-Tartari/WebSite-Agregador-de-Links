@@ -17,18 +17,17 @@ export class CrudService {
   private idCollection!: AngularFirestoreCollection<Id>;
 
   constructor(private afd: AngularFirestore) {
-    this.randomNumber();
+    this.getIdFromDB();
   }
 
   creat(product: Product, prod: string) {
     product.id = this.afd.createId();
     this.lastId.push(product.id);
-    console.log(this.lastId)
     this.incrementNumber();
     return this.afd.collection(prod).doc(String(this.number)).set(product)
   }
 
-  randomNumber() {
+  getIdFromDB() {
     this.idCollection = this.afd.collection<Id>('ID');
     this.idCollection.valueChanges().subscribe(data => {
       this.arrayId = data;
@@ -44,15 +43,4 @@ export class CrudService {
       id: increment(1)
     })
   }
-
-  update(product: Product) {
-    return this.afd.collection('Produto').doc().set(product, { merge: true })
-  }
-
-
-
-  list() {
-    return this.afd.collection('Produto').snapshotChanges();
-  }
-
 }

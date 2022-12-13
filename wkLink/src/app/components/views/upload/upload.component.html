@@ -26,6 +26,10 @@
                         <input formControlName="version" type="text" class="form-control" id="version"
                             placeholder="Informe a Versão">
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="date">Data</label>
+                        <input #myDate formControlName="date" type="date" class="form-control" id="date" >
+                    </div>
                     <div class="form-group">
                         <label for="logArea">Logs de Atualização</label>
                         <textarea formControlName="txtArea" class="form-control" id="logArea" rows="5"></textarea>
@@ -44,7 +48,7 @@
 
                         <div *ngIf="file">
                             File name: {{ file.name }}
-                            <button (click)="file = undefined">Carregue</button>
+                            <button (click)="file = undefined">Limpar</button>
                         </div>
 
                     </div>

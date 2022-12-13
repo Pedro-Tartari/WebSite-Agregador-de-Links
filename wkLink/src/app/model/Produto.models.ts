@@ -3,4 +3,5 @@ export interface Product{
     name: string;
     version: string;
     txtArea: string;
+    date: string;
 }

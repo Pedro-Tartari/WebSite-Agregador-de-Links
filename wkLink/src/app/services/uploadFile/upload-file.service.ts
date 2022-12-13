@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { getDownloadURL, ref, Storage, uploadBytesResumable } from '@angular/fire/storage';
-import { uploadBytes } from 'firebase/storage';
-import { from, Observable, switchMap } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
 
 @Injectable({
@@ -25,7 +23,6 @@ export class UploadFileService {
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        // console.log('File available at', downloadURL);
         this.toast.success('Enviado!')
         return downloadURL;
       });
